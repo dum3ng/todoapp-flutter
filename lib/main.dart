@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:todo/bloc/todo_bloc_app.dart';
 import 'package:todo/mobx/todo_app.dart';
 import 'package:todo/redux/todo_redux_app.dart';
 
@@ -25,17 +26,19 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: DefaultTabController(
-          length: 2,
+          length: 3,
           child: Scaffold(
             appBar: AppBar(
               bottom: TabBar(tabs: [
                 Tab(text: 'mobx'),
                 Tab(text: 'redux'),
+                Tab(text: 'bloc'),
               ]),
             ),
             body: TabBarView(children: <Widget>[
               TodoApp(),
               aReduxApp,
+              TodoBlocApp(),
             ],),
           ),
         ));

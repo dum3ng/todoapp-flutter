@@ -14,7 +14,6 @@ class Todo {
 class AppState {
   List<Todo> todos = [];
   String editingTitle = '';
-
   AppState({this.todos, this.editingTitle});
 }
 
